@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguyen Thi Ngoc Phuong – Finance & Investment</title>
+<meta name="description" content="Portfolio of Nguyen Thi Ngoc Phuong, Finance and Investment student at the National Economics University, Hanoi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --beige:#faf6ee; --paper:#fffdf8; --ink:#16130f; --muted:#5a5144;
+  --wine:#6d1a2b; --green:#1e3b2c; --gold:#b58a2e; --gold-lt:#d9b862;
+  --line:#e2d7bd;
+  --serif:"Bodoni Moda","Didot",Georgia,serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--beige);color:var(--ink);font:400 1.0625rem/1.65 var(--sans)}
+a{color:var(--wine)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--wine);outline-offset:3px}
+.band a:focus-visible{outline-color:var(--gold-lt)}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+
+header.bar{position:sticky;top:0;z-index:5;background:var(--beige);border-bottom:2px solid var(--gold)}
+.bar .wrap{padding-top:.8rem;padding-bottom:.8rem}
+.bar nav{display:flex;gap:1.5rem;flex-wrap:wrap}
+.bar nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.bar nav a:hover{color:var(--wine);text-decoration:underline;text-underline-offset:4px}
+
+/* hero band */
+.band{background:var(--green);color:var(--beige)}
+.hero{padding:4.5rem 0 3.5rem}
+.hero h1{font:700 clamp(2.8rem,8vw,5.4rem)/1 var(--serif);margin:0 0 1.25rem;letter-spacing:-.01em;color:var(--paper)}
+.hero p.lead{max-width:38rem;font-size:1.2rem;color:#d8ceb4;margin:0 0 1.75rem;padding-left:1rem;border-left:3px solid var(--gold-lt)}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.3rem;border-radius:2px;font-weight:600;text-decoration:none;border:1px solid var(--gold-lt)}
+.btn.primary{background:var(--gold-lt);color:var(--ink)}
+.btn.ghost{color:var(--paper)}
+.btn:hover{background:var(--wine);border-color:var(--wine);color:var(--paper)}
+
+/* ledger */
+.ledger{margin-top:3rem;background:var(--paper);color:var(--ink);border-top:4px solid var(--gold);border-radius:2px}
+.ledger caption{caption-side:top;text-align:left;padding:.9rem 1.25rem;font:700 1.15rem var(--serif);color:var(--wine);background:var(--paper);border-bottom:1px solid var(--line)}
+.ledger table{width:100%;border-collapse:collapse}
+.ledger th,.ledger td{padding:.6rem 1.25rem;text-align:left;border-bottom:1px solid var(--line)}
+.ledger tr:last-child th,.ledger tr:last-child td{border-bottom:0}
+.ledger thead th{font-weight:500;color:var(--muted);font-size:.9rem}
+.ledger tbody th{font-weight:500}
+.ledger td.num{text-align:right;font:700 1.15rem var(--serif);color:var(--wine);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ledger td.src{color:var(--muted);font-size:.92rem}
+
+/* sections */
+section{padding:3.25rem 0;border-top:1px solid var(--line)}
+.band + .wrap section:first-child{border-top:0}
+section h2{font:700 clamp(1.8rem,4vw,2.4rem)/1.15 var(--serif);margin:0 0 1.75rem;color:var(--green)}
+.entry{display:grid;grid-template-columns:11rem 1fr;gap:.5rem 2rem;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.entry:first-of-type{padding-top:0}
+.entry:last-child{border-bottom:0}
+.when{color:var(--wine);font-weight:600;font-size:.95rem;font-variant-numeric:tabular-nums}
+.entry h3{margin:0;font:600 1.15rem/1.3 var(--sans)}
+.entry .org{color:var(--green);font-weight:500;margin:.1rem 0 .6rem}
+.entry ul{margin:0;padding-left:1.1rem}
+.entry li{margin:.3rem 0}
+.entry li::marker{color:var(--gold)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem}
+.cols h3{font:600 1.05rem var(--sans);margin:0 0 .5rem;color:var(--wine)}
+.cols ul{margin:0;padding-left:1.1rem}
+.cols li{margin:.3rem 0}
+.cols li::marker{color:var(--gold)}
+.paper{padding:1.25rem 0;border-bottom:1px solid var(--line)}
+.paper:last-of-type{border-bottom:0}
+.paper h3{margin:0 0 .3rem;font:600 1.2rem/1.3 var(--serif);color:var(--ink)}
+.paper .meta{margin:0 0 .6rem;color:var(--muted);font-size:.95rem}
+.paper details summary{cursor:pointer;color:var(--wine);font-weight:600;width:fit-content}
+.paper details p{margin:.75rem 0 0;max-width:46rem}
+.paper .kw{color:var(--muted);font-size:.92rem}
+.contact p{max-width:34rem;color:var(--muted)}
+.contact ul{list-style:none;padding:0;margin:1.25rem 0 0}
+.contact li{margin:.4rem 0}
+footer{background:var(--ink);color:#cfc4a8;padding:2rem 0 2.5rem;font-size:.9rem;border-top:4px solid var(--wine)}
+
+@media (max-width:40rem){
+  .entry{grid-template-columns:1fr}
+  .hero{padding-top:3rem}
+  .ledger th:nth-child(3),.ledger td.src{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="band"><div class="wrap">
+  <div class="hero" id="top">
+    <h1>Nguyen Thi Ngoc Phuong</h1>
+    <p class="lead">Finance and Investment student at the National Economics University in Hanoi. I work carefully with financial documents and data, and I enjoy helping people get what they need.</p>
+    <div class="btns">
+      <a class="btn primary" href="#contact">Get in touch</a>
+    </div>
+
+    <div class="ledger">
+      <table>
+        <caption>My record in numbers</caption>
+        <thead><tr><th scope="col">Item</th><th scope="col" style="text-align:right">Amount</th><th scope="col">Where</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">GPA</th><td class="num">3.6 / 4.0</td><td class="src">NEU, Finance and Investment</td></tr>
+          <tr><th scope="row">Large-scale programs organised and supported</th><td class="num">Up to 6,000 people</td><td class="src">NEU, YES, A80 celebration, fashion week</td></tr>
+          <tr><th scope="row">Research papers co-authored</th><td class="num">5</td><td class="src">3 international, 2 domestic</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <section id="about">
+    <h2>About</h2>
+    <p>I am a fourth-year student with hands-on experience in personal banking support, customer service and data compilation. At BIDV and MBBank I checked loan, credit card and account documents, verified customer information and kept transaction records in order. I follow procedures closely, and I stay calm when work gets busy.</p>
+    <p>I am looking for a full-time role starting in December 2026 where I can keep building my finance skills. I plan to sit the CFA Level 1 exam in 2027.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <article class="entry">
+      <div class="when">07/2026 – 08/2026</div>
+      <div>
+        <h3>Personal Banker Intern</h3>
+        <div class="org">BIDV · part-time, Hanoi</div>
+        <ul>
+          <li>Assisted banking staff with service requests for 3–5 customers per half-day shift, in a department serving about 20 customers daily.</li>
+          <li>Supported the review of personal loan and credit card application documents, including CIC credit history checks.</li>
+          <li>Updated customer records on core banking systems and guided clients through SmartBanking and ATM services.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">12/2025</div>
+      <div>
+        <h3>Guest Relations Collaborator</h3>
+        <div class="org">Aquafina Vietnam International Fashion Week · part-time, on-site, Hanoi</div>
+        <ul>
+          <li>Led guest reception and front-of-house check-in for 4 major fashion shows, managing VIP registration, seating allocation and red-carpet arrivals for 1,200+ high-net-worth attendees, media partners and celebrity guests.</li>
+          <li>Worked directly with the event production team on backstage and front-of-house logistics, resolving on-site guest enquiries with a 100% satisfaction escalation success rate.</li>
+          <li>Streamlined digital check-in and invitation verification, cutting average guest waiting time by 35% during peak entrance hours.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="when">08/2025 – 09/2025</div>
+      <div>
+        <h3>Volunteer, A80 National Independence Anniversary Celebration</h3>
+        <div class="org">Volunteer · on-site, Vietnam</div>
+        <ul>
+          <li>Assisted the central organising committee with logistics and guest relations for the national celebration of the 80th anniversary of Vietnam's National Day, welcoming 5,000+ delegates, international guests and local citizens.</li>
+          <li>Coordinated crowd control, seating and venue access for 15+ high-profile VIP sectors across a 3-day main event, with no security or congestion bottlenecks.</li>
+          <li>Worked with a multi-agency security and event team of 50+ staff and volunteers to handle enquiries, distribute event materials and keep to the schedule.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="when">05/2025 – 08/2025</div>
+      <div>
+        <h3>Personal Banking Intern</h3>
+        <div class="org">MBBank · internship</div>
+        <ul>
+          <li>Assisted banking staff with service tasks for 5 customers per half-day shift, in a department serving about 30 customers daily.</li>
+          <li>Supported account opening, savings, insurance and remittance procedures under staff guidance.</li>
+          <li>Checked supporting documents for completeness and organised transaction records in chronological order for filing and retrieval.</li>
+          <li>Assisted with customer data entry, information verification and service documentation.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">08/2024 – 09/2025</div>
+      <div>
+        <h3>Political Affairs Office and Student Management Assistant</h3>
+        <div class="org">National Economics University · freelance, hybrid</div>
+        <ul>
+          <li>Phoned 700+ graduates for an employment survey and reached an 80% response rate, following up with the rest by text message and email.</li>
+          <li>Collected and organised data on employment status, salary, job responsibilities, alignment with degree specialisations and employer types for internal reporting.</li>
+          <li>Supported university events, including freshman welcome activities for about 6,000 incoming students and NEU Career Day, with logistics, participant registration and on-site coordination.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">03/2024 – Present</div>
+      <div>
+        <h3>Sales and Customer Service Management Assistant</h3>
+        <div class="org">British Council · part-time, on-site</div>
+        <ul>
+          <li>Assist about 10 customers per part-time shift through face-to-face contact, email, SMS, messaging and phone, collecting contact details and learning needs.</li>
+          <li>Give introductory information on tuition fees and age-appropriate courses, and refer customers to full-time staff for detailed consultation and further processing.</li>
+          <li>Completed initial enquiry intake and referral for 100% of customers assisted in each shift.</li>
+          <li>Contribute to a team that supported onboarding for 1,000+ clients, with registration, data entry and customer record updates.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">10/2023 – 09/2025</div>
+      <div>
+        <h3>Public Relations and Event Coordinator</h3>
+        <div class="org">YES – Young Economics Scientists · freelance, hybrid</div>
+        <ul>
+          <li>Created promotional content and managed social media communications for annual academic seminars, each attracting 300+ registrations.</li>
+          <li>Supported communications and event coordination for the annual ERC research competition, which grew 10% year on year in contestant numbers. The 2024 competition drew nearly 250 teams (about 750 contestants) from universities across northern Vietnam.</li>
+          <li>Supported promotion and preparation for the 2024 and 2025 ERC finals. The final received 1,200 attendance registrations within four hours and filled NEU's A2 auditorium.</li>
+          <li>Coordinated event logistics, registration and communications with students, speakers and external partners.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="when">08/2023 – Present</div>
+      <div>
+        <h3>Teaching Assistant</h3>
+        <div class="org">British Council · part-time, on-site</div>
+        <ul>
+          <li>Support classroom operations across 5 shifts per week, assisting teachers and students in each shift's classes.</li>
+          <li>Assist 1–3 assigned classes per term, each with 18 students attending twice weekly, supporting 18–54 students per term across three annual terms.</li>
+          <li>Coordinate with each class's teacher to support student participation and classroom management.</li>
+          <li>Communicate with parents at mid-term and end-of-term checkpoints, with same-day follow-up on student concerns that arise after lessons.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="education">
+    <h2>Education and skills</h2>
+    <div class="cols">
+      <div>
+        <h3>Education</h3>
+        <p style="margin:0"><strong>National Economics University (NEU)</strong><br>Bachelor of Finance and Investment<br>2023 – 2027 (expected)<br>GPA 3.6 / 4.0</p>
+        <h3 style="margin-top:1.25rem">Activities</h3>
+        <ul>
+          <li>Member, YES-NEU Scientific Research</li>
+          <li>Member, NEU Office of Political Affairs and Student Management</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Certifications</h3>
+        <ul>
+          <li>IELTS 7.0</li>
+          <li>SAT 1330</li>
+          <li>Microsoft Office Specialist: Excel 2016, PowerPoint 2016, Word 2013</li>
+          <li>CFA Level 1: planned for 2027</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <ul>
+          <li>Vietnamese</li>
+          <li>English</li>
+          <li>Korean</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research and awards</h2>
+    <p style="color:var(--muted);margin-top:-.75rem">Five co-authored papers: three at international conferences and two at national conferences. Only titles and abstracts are shown here.</p>
+
+    <article class="paper">
+      <h3>Big Data Analytics and Artificial Intelligence in Monitoring Public Investment Expenditure: Towards Smart Public Financial Governance</h3>
+      <p class="meta">With Dr. Le Thi Ngoc (State Treasury of Vietnam, Ministry of Finance)</p>
+      <details>
+        <summary>Abstract</summary>
+        <p>Public investment expenditure (PIE) from the state budget in Vietnam during 2021–2025 has stayed at roughly 26–32% of total state budget expenditure, or over 6–7% of GDP a year, confirming the central role of public investment in growth and infrastructure. In practice, however, slow disbursement, adjustments to total investment capital, fragmented allocation, and risks of inefficiency and leakage persist.</p>
+        <p>In the context of national digital transformation and the need to strengthen fiscal discipline, this study analyzes the potential of Big Data analytics (BDA) and Artificial Intelligence (AI) for monitoring PIE, aiming at a Smart Public Financial Management (Smart PFM) model. It uses institutional analysis, secondary data synthesis and international comparison to develop an integrated framework linking state budget data, public investment management and e-procurement systems.</p>
+        <p>The results point to three groups of high-potential AI tools: (i) anomaly detection in expenditure transactions; (ii) machine-learning-based project risk scoring; and (iii) disbursement forecasting for proactive fiscal management. Effective implementation requires robust data governance, algorithm transparency and clear accountability. The study proposes a Smart Treasury Platform and a comprehensive public financial data governance framework suited to the digital economy.</p>
+        <p class="kw">Keywords: Big Data analytics, AI, public investment expenditure, public financial management, fiscal oversight, intelligent governance, digital government.</p>
+      </details>
+    </article>
+
+    <article class="paper">
+      <h3>AI and Financial Innovation in Risk Management and Investment: Theory, Practice, and Lessons for Vietnam</h3>
+      <p class="meta">With Dr. Le Thi Ngoc · International Conference Proceedings: AI and Innovations in Financial Market Analysis, NEU Publishing House, 2025</p>
+      <details>
+        <summary>Abstract</summary>
+        <p>In the context of digital transformation, artificial intelligence (AI) is reshaping financial decision-making, enhancing forecasting, optimising portfolio management and improving corporate governance. Machine learning, big data analytics and blockchain have marked a turning point in financial risk assessment and global investment strategies. In Vietnam, however, adoption remains limited because of weak data infrastructure, a shortage of AI-skilled professionals and an underdeveloped regulatory framework, even though the potential in banking, insurance and capital markets is strong.</p>
+        <p>This study examines AI as a driver of financial innovation in risk management and investment, covering theoretical foundations, international best practices and policy implications for Vietnam. It recommends a national financial data infrastructure, a “legal sandbox” for AI-FinTech innovation, and investment in digital financial human capital. Collaboration among regulators, financial institutions and technology enterprises is identified as a key condition for sustainable AI adoption.</p>
+        <p>The research is qualitative, with comparative analysis and synthesis of experience from the United States, the European Union, Japan, China and Singapore, drawing on academic studies, institutional reports and legal guidelines. It offers an integrated view connecting AI-driven innovation with financial risk management and investment in transitional economies, and practical insights for Vietnam's transition toward a transparent, adaptive and technology-driven financial system.</p>
+        <p class="kw">Keywords: AI, financial innovation, risk management, investment, FinTech.</p>
+      </details>
+    </article>
+
+    <article class="paper">
+      <h3>International Experience and Lessons for the Vietnam State Treasury on a Two-Tier Organizational Model</h3>
+      <p class="meta">With Dr. Le Thi Ngoc · National Scientific Conference “Two-Tier Local Government Model: The Role of Commune-Level Government, the New Grassroots Unit”, NEU, 2025 (original title in Vietnamese)</p>
+      <details>
+        <summary>Abstract (English translation)</summary>
+        <p>This paper presents how State Treasury models are organized and operated in several countries and draws lessons for Vietnam in implementing a two-tier State Treasury model. The model is consistent with the strategy for developing the finance sector and the State Treasury system, and with the orientation toward a modern, safe and efficient digital Treasury in line with international practice and the Fourth Industrial Revolution. It follows Conclusion No. 09-KL/BCĐ of 24 November 2024 of the Central Steering Committee, which aims to build and operate a two-tier treasury model matching the organization of local government and administrative areas in the new period.</p>
+        <p class="kw">Keywords: State Treasury, two-tier local government.</p>
+      </details>
+    </article>
+
+    <article class="paper">
+      <h3>Assessing Vietnam's 2024 Economic Developments through the Finance and Budget Sector and Proposing Solutions for 2025</h3>
+      <p class="meta">With Dr. Le Thi Ngoc and Dr. Bui Thi Hong Viet · National Scientific Conference “Vietnam's Economy in 2024 and Outlook for 2025: Promoting Economic Institutional Reform in the New Context” (original title in Vietnamese)</p>
+      <details>
+        <summary>Abstract</summary>
+        <p>In 2024 Vietnam's economy, despite many challenges, achieved impressive growth: GDP rose 7.09% to VND 11,511.9 trillion (USD 476.3 billion), and GDP per capita reached VND 114 million (about USD 4,700), up USD 377 from the previous year. The finance and budget sector recorded many positive results that lay a foundation for future development. Stock market capitalization rose 20.6% from the end of 2023, and total state budget revenue reached VND 2,037.5 trillion, 19.8% above the estimate and up 16.2% year on year, while budget expenditure was reasonably controlled at VND 1,830.8 trillion, up 5.7%.</p>
+        <p>The State Bank of Vietnam remains committed to a flexible monetary policy to control inflation, while monitoring global economic policies to adjust domestic strategy when needed. Difficulties remain, however, including slow growth in domestic consumption: retail sales and consumer services rose only 9.0%, lower than in 2023, which weighs on aggregate demand.</p>
+        <p class="kw">Keywords: economy, finance, budget.</p>
+      </details>
+    </article>
+
+    <article class="paper">
+      <h3>Solutions to State Financial Reports Completion According to International Practices</h3>
+      <p class="meta">With Dr. Le Thi Ngoc · 7th International Conference on Finance, Accounting and Auditing (ICFAA 2024), Hanoi, 21 December 2024</p>
+      <details>
+        <summary>Abstract</summary>
+        <p>Accounting Law No. 88/2015/QH13, effective from 1 January 2017, introduced new regulations on the annual preparation of State Financial Statements (SFS). Together with Decree No. 25/2018/ND-CP on SFS and related documents, it led the Ministry of Finance to begin officially preparing SFS from 2019. However, SFS still has limitations and does not fully meet international practice on scope, principles, reasonableness, reliability, consistency, timeliness, completeness and transparency.</p>
+        <p>To strengthen the role and effectiveness of SFS in managing and operating the state budget, and to provide state financial information that is complete, honest, timely and reliable, this article assesses the current status of the first SFS (2018–2022) and proposes comprehensive solutions and recommendations to competent state agencies to bring SFS in line with international practice.</p>
+        <p class="kw">Keywords: accounting, finance, state financial reports, state financial statements (SFS). JEL code: M41.</p>
+      </details>
+    </article>
+
+    <h3 style="font:600 1.15rem var(--sans);margin:2rem 0 .5rem">Awards</h3>
+    <ul>
+      <li>Top 50, Political Essay Contest (university level).</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>I am available to start full-time in December 2026. The fastest way to reach me is by email.</p>
+    <ul>
+      <li>Email: <a href="mailto:phuongntn2005@gmail.com">phuongntn2005@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/nguyenphuong5/" rel="noopener">linkedin.com/in/nguyenphuong5</a></li>
+      <li>Location: Tu Liem, Hanoi, Vietnam</li>
+    </ul>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Nguyen Thi Ngoc Phuong</div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
